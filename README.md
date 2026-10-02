@@ -240,9 +240,7 @@ products.duckdb
 
 
 
-## Author
-
-**Hamza Chadli**
+## Author**Hamza Chadli**
 **data lineage**
 <img width="1920" height="1106" alt="Screenshot 2026-10-02 111635" src="https://github.com/user-attachments/assets/fcbcdb56-a1ef-450d-af06-7c86837547da" />
 **db shema**
