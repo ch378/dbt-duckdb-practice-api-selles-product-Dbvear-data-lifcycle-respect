@@ -1,0 +1,14 @@
+data/
+│
+├── ingestion/
+│   ├── api_client.py        → appel HTTP
+│   └── fetch_products.py    → récupération des produits
+│
+├── transformation/
+│   ├── validation.py        → validation du schéma
+│   ├── cleaning.py          → doublons, nulls, nettoyage
+│   └── transformation.py    → price_category + stock_status
+│
+└── serving/
+    └── products.duckdb        → données finales
+    main > run all process data

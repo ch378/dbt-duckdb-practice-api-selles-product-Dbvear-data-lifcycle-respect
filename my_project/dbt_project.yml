@@ -1,0 +1,34 @@
+name: dbt_project
+version: '1.0.0'
+config-version: 2
+
+profile: dbt_project
+
+model-paths:
+  - models
+
+seed-paths:
+  - seeds
+
+test-paths:
+  - tests
+
+macro-paths:
+  - macros
+
+snapshot-paths:
+  - snapshots
+
+analysis-paths:
+  - analyses
+
+models:
+  dbt_project:
+    staging:
+      +materialized: view
+
+    intermediate:
+      +materialized: view
+
+    marts:
+      +materialized: table

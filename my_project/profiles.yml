@@ -1,0 +1,8 @@
+dbt_project:
+  target: dev
+
+  outputs:
+    dev:
+      type: duckdb
+      path: "C:\\Users\\chadl\\OneDrive\\Bureau\\dbt-core-duckdb\\data\\serving\\products.duckdb"
+      threads: 4

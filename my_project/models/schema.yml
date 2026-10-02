@@ -1,0 +1,101 @@
+version: 2
+
+seeds:
+  - name: fakeproducts
+    description: "Fake products dataset used for dbt practice"
+
+    columns:
+      - name: id
+        description: "Product identifier"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        data_tests:
+          - not_null
+
+      - name: category
+        data_tests:
+          - not_null
+
+      - name: price
+        data_tests:
+          - not_null
+
+      - name: stock
+        data_tests:
+          - not_null
+
+models:
+
+  - name: stg_fakeproducts
+    description: "Clean staging layer for fake products"
+
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        data_tests:
+          - not_null
+
+      - name: category
+        data_tests:
+          - not_null
+
+      - name: price
+        data_tests:
+          - not_null
+
+      - name: stock
+        data_tests:
+          - not_null
+
+  - name: int_fakeproducts
+    description: "Business transformations for fake products"
+
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: price_category
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Low
+                  - Medium
+                  - High
+
+      - name: stock_status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - "Out of Stock"
+                  - "Low Stock"
+                  - "In Stock"
+
+  - name: mart_products
+    description: "Business-ready product dataset"
+
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: mart_out_of_stock
+    description: "Products currently out of stock"
+
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
